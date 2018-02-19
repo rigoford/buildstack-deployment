@@ -55,6 +55,10 @@ instance_groups:
           executors: 2
           mode: exclusive
           labels: "build"    
+      nexus:
+        admin:
+          username: admin
+          password: ((nexus_admin_password)) 
   vm_type: default
   stemcell: default
   networks:
