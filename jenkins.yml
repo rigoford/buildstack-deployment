@@ -59,6 +59,9 @@ instance_groups:
         admin:
           username: admin
           password: ((nexus_admin_password)) 
+        deployer:
+          username: jenkins
+          password: ((nexus_deployer_password)) 
   vm_type: default
   stemcell: default
   networks:
@@ -74,6 +77,8 @@ instance_groups:
       nexus:
         admin:
           password: ((nexus_admin_password))
+        deployer:
+          password: ((nexus_deployer_password))
   vm_type: default
   stemcell: default
   networks:
@@ -85,4 +90,6 @@ variables:
 - name: jenkins_agent_password
   type: password
 - name: nexus_admin_password
+  type: password
+- name: nexus_deployer_password
   type: password
