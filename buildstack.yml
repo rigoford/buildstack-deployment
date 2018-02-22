@@ -8,7 +8,7 @@ releases:
 stemcells:
 - alias: default
   os: ubuntu-trusty
-  version: latest
+  version: "3468.21"
 
 update:
   canaries: 1
@@ -32,13 +32,13 @@ instance_groups:
           email: "admin@localhost"
           password: ((jenkins_admin_password))
         agent:
-          password: ((jenkins_agent_password))  
-  vm_type: m3.medium
+          password: ((jenkins_agent_password))
+  vm_type: default
   vm_extensions: [internet-required, jenkins-pool]
   persistent_disk_pool: 100GB
   stemcell: default
   networks:
-  - name: buildstack
+  - name: default
 - name: jenkins-slave
   azs:
   - z1
@@ -55,10 +55,34 @@ instance_groups:
           executors: 2
           mode: exclusive
           labels: "build"    
-  vm_type: m3.medium
+      nexus:
+        admin:
+          username: admin
+          password: ((nexus_admin_password))
+        deployer:
+          username: jenkins
+          password: ((nexus_deployer_password))
+  vm_type: default
   stemcell: default
   networks:
-  - name: buildstack
+  - name: default
+- name: nexus
+  azs:
+  - z1
+  instances: 1
+  jobs:
+  - name: nexus
+    release: buildstack
+    properties:
+      nexus:
+        admin:
+          password: ((nexus_admin_password))
+        deployer:
+          password: ((nexus_deployer_password))
+  vm_type: default
+  stemcell: default
+  networks:
+  - name: default
 - name: sonarqube
   azs:
   - z1
@@ -82,23 +106,11 @@ instance_groups:
         instance: ((cloudsql.proxy.instance_name))
         port: 3306
         auth: ((cloudsql.proxy.auth))
-  vm_type: m3.medium
+  vm_type: default
   vm_extensions: [internet-required]
   stemcell: default
   networks:
-  - name: buildstack
-- name: nexus
-  azs:
-  - z1
-  instances: 1
-  jobs:
-  - name: nexus
-    release: buildstack
-  vm_type: m3.medium
-  vm_extensions: [internet-required]
-  stemcell: default
-  networks:
-  - name: buildstack
+  - name: default
 - name: gerrit
   azs:
   - z1
@@ -118,17 +130,21 @@ instance_groups:
         instance: ((cloudsql.proxy.instance_name))
         port: 3306
         auth: ((cloudsql.proxy.auth))
-  vm_type: m3.medium
+  vm_type: default
   vm_extensions: [internet-required]
   persistent_disk_pool: 100GB
   stemcell: default
   networks:
-  - name: buildstack
+  - name: default
 
 variables:
 - name: jenkins_admin_password
   type: password
 - name: jenkins_agent_password
+  type: password
+- name: nexus_admin_password
+  type: password
+- name: nexus_deployer_password
   type: password
 - name: sonar_mysql_password
   type: password
