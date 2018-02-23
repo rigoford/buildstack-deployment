@@ -8,13 +8,6 @@ This is a bosh2 style deployment config for Gerrit/Jenkins/Sonarqube & Nexus all
 
 # Installation
 
-To deploy the buildstack the following network is required:
-
-```
-networks:
-- name: buildstack
-```
-
 Deploy using:
 
 ```
