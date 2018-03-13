@@ -95,7 +95,7 @@ instance_groups:
           host: localhost
         server:
           port: ((sonar_server_port))
-          address: ((sonar_server_address))
+          address: 127.0.0.1
   - name: cloud-sql-proxy
     release: buildstack
     properties:
