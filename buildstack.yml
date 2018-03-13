@@ -24,7 +24,7 @@ instance_groups:
   jobs:
   - name: jenkins-master
     release: buildstack
-    properties: 
+    properties:
       jenkins:
         server:
           address: "http://localhost:8080/"
@@ -47,14 +47,14 @@ instance_groups:
   jobs:
   - name: jenkins-slave
     release: buildstack
-    properties: 
+    properties:
       jenkins:
         slave:
           master_password: ((jenkins_agent_password))
           master_username: agent
           executors: 2
           mode: exclusive
-          labels: "build"    
+          labels: "build"
       nexus:
         admin:
           username: admin
@@ -74,11 +74,8 @@ instance_groups:
   - name: nexus
     release: buildstack
     properties:
-      nexus:
-        admin:
-          password: ((nexus_admin_password))
-        deployer:
-          password: ((nexus_deployer_password))
+      nexus_admin_password: ((nexus_admin_password))
+      nexus_deployer_password: ((nexus_deployer_password))
   vm_type: default
   stemcell: default
   networks:
