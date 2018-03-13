@@ -112,7 +112,7 @@ instance_groups:
       gerrit:
         mysql:
           password: ((gerrit_mysql_password))
-          host: localhost
+          host: ((gerrit_mysql_host))
   vm_type: default
   vm_extensions: [internet-required]
   persistent_disk_pool: 100GB
