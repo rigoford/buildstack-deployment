@@ -113,6 +113,8 @@ instance_groups:
         mysql:
           password: ((gerrit_mysql_password))
           host: ((gerrit_mysql_host))
+          username: ((gerrit_mysql_username))
+          database: ((gerrit_mysql_database))
   vm_type: default
   vm_extensions: [internet-required]
   persistent_disk_pool: 100GB
