@@ -96,13 +96,6 @@ instance_groups:
         server:
           port: ((sonar_server_port))
           address: ((sonar_server_address))
-  - name: cloud-sql-proxy
-    release: buildstack
-    properties:
-      proxy:
-        instance: ((cloudsql_proxy_instance_name))
-        port: 3306
-        auth: ((cloudsql_proxy_auth))
   vm_type: default
   vm_extensions: [internet-required]
   stemcell: default
@@ -120,13 +113,6 @@ instance_groups:
         mysql:
           password: ((gerrit_mysql_password))
           host: localhost
-  - name: cloud-sql-proxy
-    release: buildstack
-    properties:
-      proxy:
-        instance: ((cloudsql_proxy_instance_name))
-        port: 3306
-        auth: ((cloudsql_proxy_auth))
   vm_type: default
   vm_extensions: [internet-required]
   persistent_disk_pool: 100GB
