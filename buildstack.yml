@@ -100,9 +100,9 @@ instance_groups:
     release: buildstack
     properties:
       proxy:
-        instance: ((cloudsql.proxy.instance_name))
+        instance: ((cloudsql_proxy_instance_name))
         port: 3306
-        auth: ((cloudsql.proxy.auth))
+        auth: ((cloudsql_proxy_auth))
   vm_type: default
   vm_extensions: [internet-required]
   stemcell: default
@@ -124,9 +124,9 @@ instance_groups:
     release: buildstack
     properties:
       proxy:
-        instance: ((cloudsql.proxy.instance_name))
+        instance: ((cloudsql_proxy_instance_name))
         port: 3306
-        auth: ((cloudsql.proxy.auth))
+        auth: ((cloudsql_proxy_auth))
   vm_type: default
   vm_extensions: [internet-required]
   persistent_disk_pool: 100GB
