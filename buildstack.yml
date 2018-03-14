@@ -3,6 +3,7 @@ releases:
 - name: buildstack
   version: 0.0.16
   url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.16.tgz
+  sha1: f9ef547bd6b8fe3e6450aeb23c3f8ca69f7ad48b
 stemcells:
 - alias: default
   os: ubuntu-trusty
