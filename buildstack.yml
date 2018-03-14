@@ -3,8 +3,7 @@ name: buildstack
 
 releases:
 - name: buildstack
-  version: "0.0.7"
-  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.7.tgz
+  version: latest
 
 stemcells:
 - alias: default
@@ -25,7 +24,7 @@ instance_groups:
   jobs:
   - name: jenkins-master
     release: buildstack
-    properties:
+    properties: 
       jenkins:
         server:
           address: "http://localhost:8080/"
@@ -48,14 +47,14 @@ instance_groups:
   jobs:
   - name: jenkins-slave
     release: buildstack
-    properties:
+    properties: 
       jenkins:
         slave:
           master_password: ((jenkins_agent_password))
           master_username: agent
           executors: 2
           mode: exclusive
-          labels: "build"
+          labels: "build"    
       nexus:
         admin:
           username: admin
@@ -75,8 +74,11 @@ instance_groups:
   - name: nexus
     release: buildstack
     properties:
-      nexus_admin_password: ((nexus_admin_password))
-      nexus_deployer_password: ((nexus_deployer_password))
+      nexus:
+        admin:
+          password: ((nexus_admin_password))
+        deployer:
+          password: ((nexus_deployer_password))
   vm_type: default
   stemcell: default
   networks:
@@ -97,6 +99,13 @@ instance_groups:
         server:
           port: ((sonar_server_port))
           address: ((sonar_server_address))
+  - name: cloud-sql-proxy
+    release: buildstack
+    properties:
+      proxy:
+        instance: ((cloudsql.proxy.instance_name))
+        port: 3306
+        auth: ((cloudsql.proxy.auth))
   vm_type: default
   vm_extensions: [internet-required]
   stemcell: default
@@ -113,9 +122,14 @@ instance_groups:
       gerrit:
         mysql:
           password: ((gerrit_mysql_password))
-          host: ((gerrit_mysql_host))
-          username: ((gerrit_mysql_username))
-          database: ((gerrit_mysql_database))
+          host: localhost
+  - name: cloud-sql-proxy
+    release: buildstack
+    properties:
+      proxy:
+        instance: ((cloudsql.proxy.instance_name))
+        port: 3306
+        auth: ((cloudsql.proxy.auth))
   vm_type: default
   vm_extensions: [internet-required]
   persistent_disk_pool: 100GB

@@ -28,11 +28,6 @@ instance_groups:
       nexus:
         admin:
           password: ((nexus_admin_password))
-        deployer:
-          firstname: "Deployer"
-          lastname: "User"
-          email: "deploymentuser@finkit.com"
-          password: ((nexus_deployer_password))
   vm_type: default
   stemcell: default
   networks:
@@ -40,6 +35,4 @@ instance_groups:
 
 variables:
 - name: nexus_admin_password
-  type: password
-- name: nexus_deployer_password
   type: password
