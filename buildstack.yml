@@ -3,7 +3,8 @@ name: buildstack
 
 releases:
 - name: buildstack
-  version: latest
+  version: "0.0.7"
+  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.7.tgz
 
 stemcells:
 - alias: default
