@@ -1,142 +1,142 @@
+instance_groups:
+- azs:
+  - z1
+  instances: 1
+  jobs:
+  - name: jenkins-master
+    properties:
+      jenkins:
+        admin:
+          email: admin@localhost
+          password: ((jenkins_admin_password))
+        agent:
+          password: ((jenkins_agent_password))
+        server:
+          address: http://localhost:8080/
+    release: buildstack
+  name: jenkins-master
+  networks:
+  - name: default
+  persistent_disk_pool: 100GB
+  stemcell: default
+  vm_extensions:
+  - internet-required
+  - jenkins-pool
+  vm_type: default
+- azs:
+  - z1
+  - z2
+  instances: 2
+  jobs:
+  - name: jenkins-slave
+    properties:
+      jenkins:
+        slave:
+          executors: 2
+          labels: build
+          master_password: ((jenkins_agent_password))
+          master_username: agent
+          mode: exclusive
+      nexus:
+        admin:
+          password: ((nexus_admin_password))
+          username: admin
+        deployer:
+          password: ((nexus_deployer_password))
+          username: jenkins
+    release: buildstack
+  name: jenkins-slave
+  networks:
+  - name: default
+  stemcell: default
+  vm_type: default
+- azs:
+  - z1
+  instances: 1
+  jobs:
+  - name: nexus
+    properties:
+      nexus:
+        admin:
+          password: ((nexus_admin_password))
+        deployer:
+          password: ((nexus_deployer_password))
+    release: buildstack
+  name: nexus
+  networks:
+  - name: default
+  stemcell: default
+  vm_type: default
+- azs:
+  - z1
+  instances: 1
+  jobs:
+  - name: sonarqube
+    properties:
+      sonar:
+        mysql:
+          host: localhost
+          password: ((sonar_mysql_password))
+          username: ((sonar_mysql_username))
+        server:
+          address: ((sonar_server_address))
+          port: ((sonar_server_port))
+    release: buildstack
+  - name: cloud-sql-proxy
+    properties:
+      proxy:
+        auth: ((cloudsql.proxy.auth))
+        instance: ((cloudsql.proxy.instance_name))
+        port: 3306
+    release: buildstack
+  name: sonarqube
+  networks:
+  - name: default
+  stemcell: default
+  vm_extensions:
+  - internet-required
+  vm_type: default
+- azs:
+  - z1
+  instances: 1
+  jobs:
+  - name: gerrit
+    properties:
+      gerrit:
+        mysql:
+          host: localhost
+          password: ((gerrit_mysql_password))
+    release: buildstack
+  - name: cloud-sql-proxy
+    properties:
+      proxy:
+        auth: ((cloudsql.proxy.auth))
+        instance: ((cloudsql.proxy.instance_name))
+        port: 3306
+    release: buildstack
+  name: gerrit
+  networks:
+  - name: default
+  persistent_disk_pool: 100GB
+  stemcell: default
+  vm_extensions:
+  - internet-required
+  vm_type: default
 name: buildstack
 releases:
 - name: buildstack
-  version: 0.0.16
-  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.16.tgz
   sha1: f9ef547bd6b8fe3e6450aeb23c3f8ca69f7ad48b
+  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.16.tgz
+  version: 0.0.16
 stemcells:
 - alias: default
   os: ubuntu-trusty
   version: "3468.21"
 update:
   canaries: 1
-  max_in_flight: 1
   canary_watch_time: 15000-300000
+  max_in_flight: 1
   update_watch_time: 15000-300000
-instance_groups:
-- name: jenkins-master
-  azs:
-  - z1
-  instances: 1
-  jobs:
-  - name: jenkins-master
-    release: buildstack
-    properties:
-      jenkins:
-        server:
-          address: http://localhost:8080/
-        admin:
-          email: admin@localhost
-          password: ((jenkins_admin_password))
-        agent:
-          password: ((jenkins_agent_password))
-  vm_type: default
-  vm_extensions:
-  - internet-required
-  - jenkins-pool
-  persistent_disk_pool: 100GB
-  stemcell: default
-  networks:
-  - name: default
-- name: jenkins-slave
-  azs:
-  - z1
-  - z2
-  instances: 2
-  jobs:
-  - name: jenkins-slave
-    release: buildstack
-    properties:
-      jenkins:
-        slave:
-          master_password: ((jenkins_agent_password))
-          master_username: agent
-          executors: 2
-          mode: exclusive
-          labels: build
-      nexus:
-        admin:
-          username: admin
-          password: ((nexus_admin_password))
-        deployer:
-          username: jenkins
-          password: ((nexus_deployer_password))
-  vm_type: default
-  stemcell: default
-  networks:
-  - name: default
-- name: nexus
-  azs:
-  - z1
-  instances: 1
-  jobs:
-  - name: nexus
-    release: buildstack
-    properties:
-      nexus:
-        admin:
-          password: ((nexus_admin_password))
-        deployer:
-          password: ((nexus_deployer_password))
-  vm_type: default
-  stemcell: default
-  networks:
-  - name: default
-- name: sonarqube
-  azs:
-  - z1
-  instances: 1
-  jobs:
-  - name: sonarqube
-    release: buildstack
-    properties:
-      sonar:
-        mysql:
-          username: ((sonar_mysql_username))
-          password: ((sonar_mysql_password))
-          host: localhost
-        server:
-          port: ((sonar_server_port))
-          address: ((sonar_server_address))
-  - name: cloud-sql-proxy
-    release: buildstack
-    properties:
-      proxy:
-        instance: ((cloudsql.proxy.instance_name))
-        port: 3306
-        auth: ((cloudsql.proxy.auth))
-  vm_type: default
-  vm_extensions:
-  - internet-required
-  stemcell: default
-  networks:
-  - name: default
-- name: gerrit
-  azs:
-  - z1
-  instances: 1
-  jobs:
-  - name: gerrit
-    release: buildstack
-    properties:
-      gerrit:
-        mysql:
-          password: ((gerrit_mysql_password))
-          host: localhost
-  - name: cloud-sql-proxy
-    release: buildstack
-    properties:
-      proxy:
-        instance: ((cloudsql.proxy.instance_name))
-        port: 3306
-        auth: ((cloudsql.proxy.auth))
-  vm_type: default
-  vm_extensions:
-  - internet-required
-  persistent_disk_pool: 100GB
-  stemcell: default
-  networks:
-  - name: default
 variables:
 - name: jenkins_admin_password
   type: password
@@ -150,3 +150,4 @@ variables:
   type: password
 - name: gerrit_mysql_password
   type: password
+
