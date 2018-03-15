@@ -125,9 +125,9 @@ instance_groups:
 name: buildstack
 releases:
 - name: buildstack
-  sha1: 43aa56ccf8604543d9a66b14eb31aab91e73f7ba
-  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.18.tgz
-  version: 0.0.18
+  sha1: e0b59b2f507236c1aa5e5f479c515f67acf966d8
+  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/haraka-boshrelease-0.0.1.tgz
+  version: 0.0.1
 stemcells:
 - alias: default
   os: ubuntu-trusty
