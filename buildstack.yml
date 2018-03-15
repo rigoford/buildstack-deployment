@@ -111,9 +111,9 @@ instance_groups:
 name: buildstack
 releases:
 - name: buildstack
-  sha1: f85843471b8f3fbaad7e518f49147b2555db3ee1
-  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.19.tgz
-  version: 0.0.19
+  sha1: 0046c6abba8833fcf99fcf08c722282d8911dceb
+  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.20.tgz
+  version: 0.0.20
 - name: uaa
   sha1: 462383bd04d75ba5a0fd5e205853719b5b78423d
   url: https://bosh.io/d/github.com/cloudfoundry/uaa-release?v=56
