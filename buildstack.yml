@@ -77,10 +77,6 @@ instance_groups:
         mysql:
           host: ((buildstack_db_instance_ip))
           password: ((sonar_mysql_password))
-          username: ((sonar_mysql_username))
-        server:
-          address: ((sonar_server_address))
-          port: ((sonar_server_port))
     release: devtools
   name: sonarqube
   networks:
