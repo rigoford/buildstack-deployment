@@ -13,7 +13,7 @@ instance_groups:
           password: ((jenkins_agent_password))
         server:
           address: http://localhost:8080/
-    release: buildstack
+    release: devtools
   name: jenkins-master
   networks:
   - name: default
@@ -44,7 +44,7 @@ instance_groups:
         deployer:
           password: ((nexus_deployer_password))
           username: jenkins
-    release: buildstack
+    release: devtools
   name: jenkins-slave
   networks:
   - name: default
@@ -61,7 +61,7 @@ instance_groups:
           password: ((nexus_admin_password))
         deployer:
           password: ((nexus_deployer_password))
-    release: buildstack
+    release: devtools
   name: nexus
   networks:
   - name: default
@@ -81,7 +81,7 @@ instance_groups:
         server:
           address: ((sonar_server_address))
           port: ((sonar_server_port))
-    release: buildstack
+    release: devtools
   name: sonarqube
   networks:
   - name: default
@@ -99,7 +99,7 @@ instance_groups:
         mysql:
           host: ((buildstack_db_instance_ip))
           password: ((gerrit_mysql_password))
-    release: buildstack
+    release: devtools
   name: gerrit
   networks:
   - name: default
@@ -110,10 +110,6 @@ instance_groups:
   vm_type: default
 name: buildstack
 releases:
-- name: buildstack
-  sha1: c72453f04143a35da7926b29fb913798a8a4b616
-  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/devtools-boshrelease-0.0.1.tgz
-  version: 0.0.1
 - name: uaa
   sha1: 462383bd04d75ba5a0fd5e205853719b5b78423d
   url: https://bosh.io/d/github.com/cloudfoundry/uaa-release?v=56
