@@ -75,19 +75,12 @@ instance_groups:
     properties:
       sonar:
         mysql:
-          host: localhost
+          host: ((buildstack_db_instance_ip))
           password: ((sonar_mysql_password))
           username: ((sonar_mysql_username))
         server:
           address: ((sonar_server_address))
           port: ((sonar_server_port))
-    release: buildstack
-  - name: cloud-sql-proxy
-    properties:
-      proxy:
-        auth: ((cloudsql.proxy.auth))
-        instance: ((cloudsql.proxy.instance_name))
-        port: 3306
     release: buildstack
   name: sonarqube
   networks:
@@ -104,15 +97,8 @@ instance_groups:
     properties:
       gerrit:
         mysql:
-          host: localhost
+          host: ((buildstack_db_instance_ip))
           password: ((gerrit_mysql_password))
-    release: buildstack
-  - name: cloud-sql-proxy
-    properties:
-      proxy:
-        auth: ((cloudsql.proxy.auth))
-        instance: ((cloudsql.proxy.instance_name))
-        port: 3306
     release: buildstack
   name: gerrit
   networks:
