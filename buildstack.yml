@@ -114,6 +114,10 @@ releases:
   sha1: f85843471b8f3fbaad7e518f49147b2555db3ee1
   url: https://storage.googleapis.com/finkit-buildstack-releases/releases/buildstack-boshrelease-0.0.19.tgz
   version: 0.0.19
+- name: uaa
+  sha1: 462383bd04d75ba5a0fd5e205853719b5b78423d
+  url: https://bosh.io/d/github.com/cloudfoundry/uaa-release?v=56
+  version: 56
 stemcells:
 - alias: default
   os: ubuntu-trusty
