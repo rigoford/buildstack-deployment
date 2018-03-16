@@ -66,10 +66,10 @@ instance_groups:
   networks:
   - name: default
   stemcell: default
-  vm_type: default
   vm_extensions:
   - internet-required
   - nexus-pool
+  vm_type: default
 - azs:
   - z1
   instances: 1
