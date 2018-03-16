@@ -67,6 +67,9 @@ instance_groups:
   - name: default
   stemcell: default
   vm_type: default
+  vm_extensions:
+  - internet-required
+  - nexus-pool
 - azs:
   - z1
   instances: 1
@@ -84,6 +87,7 @@ instance_groups:
   stemcell: default
   vm_extensions:
   - internet-required
+  - sonar-pool
   vm_type: default
 - azs:
   - z1
@@ -103,6 +107,7 @@ instance_groups:
   stemcell: default
   vm_extensions:
   - internet-required
+  - gerrit-pool
   vm_type: default
 - azs:
   - z1
@@ -175,6 +180,7 @@ instance_groups:
   stemcell: default
   vm_extensions:
   - internet-required
+  - uaa-pool
   vm_type: default
 name: buildstack
 releases:
