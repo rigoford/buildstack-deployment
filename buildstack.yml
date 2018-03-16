@@ -244,3 +244,4 @@ variables:
   type: password
 - name: uaa_jwt_signing_key
   type: rsa
+
