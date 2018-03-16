@@ -183,6 +183,7 @@ instance_groups:
   - uaa-pool
   vm_type: default
 name: buildstack
+os: ubuntu-trusty
 releases:
 - name: uaa
   sha1: 462383bd04d75ba5a0fd5e205853719b5b78423d
@@ -237,4 +238,5 @@ variables:
   type: password
 - name: uaa_jwt_signing_key
   type: rsa
+version: "3541.9"
 
