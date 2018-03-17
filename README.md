@@ -1,6 +1,6 @@
 # buildstack-deployment
 
-[![Build Status](https://travis-ci.org/FINkit/buildstack-boshrelease.svg?branch=master)](https://travis-ci.org/FINkit/buildstack-boshrelease)
+[![Build Status](https://travis-ci.org/FINkit/devtools-boshrelease.svg?branch=master)](https://travis-ci.org/FINkit/devtools-boshrelease)
 
 # Overview
 
