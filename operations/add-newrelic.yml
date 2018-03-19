@@ -5,3 +5,13 @@ releases:
     url: https://github.com/cloudfoundry-community/newrelic-boshrelease/releases/download/v14.1.0/newrelic-14.1.0.tgz
     sha1: 97c9d7190f2a52ec54ec362a239b8c3e61506612
 
+addons:
+- name: newrelic
+  jobs:
+  - name: newrelic-monitor
+    release: newrelic
+    properties:
+      newrelic:
+      license_key: ((newrelic_license_key))
+      deployment_tag: ((newrelic_eployment_tag))
+
