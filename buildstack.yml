@@ -193,7 +193,6 @@ releases:
   sha1: 56d9a2e342fb93f849967b18b20eff0e63937c9d
   url: https://storage.googleapis.com/finkit-buildstack-releases/releases/devtools-boshrelease-0.0.4.tgz
   version: 0.0.4
-sha1: 462383bd04d75ba5a0fd5e205853719b5b78423d
 stemcells:
 - alias: default
   os: ubuntu-trusty
