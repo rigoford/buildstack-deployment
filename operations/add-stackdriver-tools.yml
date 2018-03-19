@@ -1,0 +1,17 @@
+---
+releases:
+- name: stackdriver-tools
+  version: 2.0.0
+  url: https://github.com/cloudfoundry-community/stackdriver-tools/releases/download/v2.0.0/stackdriver-tools-2.0.0.tgz
+
+addons:
+- name: stackdriver-tools
+  jobs:
+  - name: google-fluentd
+    release: stackdriver-tools
+  - name: stackdriver-agent
+    release: stackdriver-tools
+  properties:
+    credentials:
+      application_default_credentials: ((google_stackdriver_creds))
+
