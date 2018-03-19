@@ -12,6 +12,5 @@ addons:
     release: newrelic
     properties:
       newrelic:
-      license_key: ((newrelic_license_key))
-      deployment_tag: ((newrelic_eployment_tag))
-
+        license_key: ((newrelic_license_key))
+        deployment_tag: ((newrelic_deployment_tag))
