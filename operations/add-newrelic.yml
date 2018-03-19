@@ -1,0 +1,6 @@
+---
+releases:
+  - name: newrelic
+    version: 14.1.0
+    url: https://github.com/cloudfoundry-community/newrelic-boshrelease/releases/download/v14.1.0/newrelic-14.1.0.tgz
+
