@@ -183,9 +183,9 @@ releases:
   url: https://bosh.io/d/github.com/cloudfoundry/uaa-release?v=56
   version: 56
 - name: devtools
-  sha1: a7a6a09f85e65279c21fb1b83c443e4da3a4ac65
-  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/devtools-boshrelease-0.0.9.tgz
-  version: 0.0.9
+  sha1: 73a905952e77b54e6005c037064a206686ce7ddc
+  url: https://storage.googleapis.com/finkit-buildstack-releases/releases/devtools-boshrelease-0.0.10.tgz
+  version: 0.0.10
 stemcells:
 - alias: default
   os: ubuntu-trusty
