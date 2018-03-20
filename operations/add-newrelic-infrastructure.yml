@@ -1,0 +1,15 @@
+---
+releases:
+  - name: newrelic-infrastructure
+    version: 0.1.1
+    url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.1/newrelic-infra-bosh-0.1.1.tgz
+    sha1:
+
+addons:
+- name: newrelic-infrastructure
+  jobs:
+  - name: newrelic-infra-bosh
+    release: newrelic-infrastructure
+    properties:
+      newrelic:
+        license_key: ((newrelic_license_key))

@@ -1,12 +1,16 @@
+---
 addons:
-- jobs:
-  - name: newrelic-monitor
+- name: newrelic-server
+  jobs:
+  - name: newrelic-server
+    release: newrelic-server
     properties:
       newrelic:
         deployment_tag: ((newrelic_deployment_tag))
         license_key: ((newrelic_license_key))
     release: newrelic
   name: newrelic
+
 releases:
 - name: newrelic
   sha1: 98b96dacaddf71574a57b94419cbf031bee4047e
