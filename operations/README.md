@@ -12,3 +12,4 @@ This is the README for Ops-files. To learn more about `buildstack-deployment`, g
 | [`just-sonarqube.yml`](just-sonarqube.yml) | Removes all other buildtools from the deployment apart from `sonarqube`. | |
 | [`add-newrelic-server.yml`](add-newrelic-server.yml) | Includes `newrelic server` as an addon. | |
 | [`add-newrelic-infrastructure`](add-newrelic-infrastructure) | Includes `newrelic infrastructure` as an addon. | ||
+| [`add-stackdriver-tools.yml`](add-stackdriver-tools.yml) | Optional stackdriver-tools addon. |  Required variables: _google_stackdriver_creds - (service account JSON)_ ||
