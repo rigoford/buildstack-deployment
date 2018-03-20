@@ -37,13 +37,6 @@ instance_groups:
           master_password: ((jenkins_agent_password))
           master_username: agent
           mode: exclusive
-      nexus:
-        admin:
-          password: ((nexus_admin_password))
-          username: admin
-        deployer:
-          password: ((nexus_deployer_password))
-          username: jenkins
     release: devtools
   name: jenkins-slave
   networks:
