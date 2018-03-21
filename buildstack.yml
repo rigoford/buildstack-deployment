@@ -146,7 +146,7 @@ instance_groups:
         sslPrivateKey: ((uaa_ssl.private_key))
         url: https://uaa.((system_domain))
       uaadb:
-          address: ((buildstack_db_instance_ip))
+        address: ((buildstack_db_instance_ip))
         databases:
         - name: uaa
           tag: uaa
