@@ -148,7 +148,7 @@ instance_groups:
       uaadb:
         address: ((buildstack_db_instance_ip))
         databases:
-        - name: uaa_db
+        - name: ((uaa_mysql_db))
           tag: uaa
         db_scheme: mysql
         port: 3306
