@@ -141,29 +141,15 @@ instance_groups:
         sslPrivateKey: ((uaa_ssl.private_key))
         url: https://uaa.((system_domain))
       uaadb:
-        address: 127.0.0.1
+          address: ((buildstack_db_instance_ip))
         databases:
-        - name: uaadb
+        - name: uaa
           tag: uaa
-        db_scheme: postgresql
-        port: 5524
+        db_scheme: mysql
+        port: 3306
         roles:
-        - name: uaaadmin
-          password: admin
-          tag: admin
-    release: uaa
-  - name: uaa_postgres
-    properties:
-      postgres:
-        address: 127.0.0.1
-        databases:
-        - citext: true
-          name: uaadb
-          tag: uaa
-        port: 5524
-        roles:
-        - name: uaaadmin
-          password: admin
+        - name: uaa
+          password: ((uaa_mysql_password))
           tag: admin
     release: uaa
   name: uaa
