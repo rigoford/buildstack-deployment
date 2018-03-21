@@ -1,0 +1,35 @@
+---
+type: replace
+path: /instance_groups/name=uaa/jobs/name=uaa_postgres/uaadb/address
+value: 127.0.0.1
+
+type: replace
+path: /instance_groups/name=uaa/jobs/name=uaa_postgres/uaadb/db_scheme
+value: postgresql
+
+type: replace
+path: /instance_groups/name=uaa/jobs/name=uaa_postgres/uaadb/port
+value: 5524
+
+type: replace
+path: /instance_groups/name=uaa/jobs/name=uaa_postgres/uaadb/roles/name=uaa/password
+value: admin
+
+type: replace
+path: /instance_groups/name=uaa/jobs/name=uaa_postgres/uaadb/roles/name=uaa/tag
+value: admin
+
+type: replace
+path: /instance_groups/name=uaa/jobs/name=uaa_postgres/uaa_postgres
+value: |
+properties:		
+  postgres:		
+    address: 127.0.0.1		
+    databases:		
+    - citext: true		
+      name: uaa
+      tag: uaa		
+    port: 5524		
+    roles:
+    - name: uaa
+      password: admin
