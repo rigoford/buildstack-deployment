@@ -7,14 +7,6 @@ addons:
     release: newrelic-infrastructure
   name: newrelic-infrastructure
 - jobs:
-  - name: newrelic-server
-    properties:
-      newrelic:
-        deployment_tag: ((newrelic_deployment_tag))
-        license_key: ((newrelic_license_key))
-    release: newrelic
-  name: newrelic
-- jobs:
   - name: google-fluentd
     release: stackdriver-tools
   - name: stackdriver-agent
@@ -28,14 +20,6 @@ releases:
   sha1: 8b9863ec05b665c808036de274b5de7748ca29e2
   url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.1/newrelic-infra-bosh-0.1.1.tgz
   version: 0.1.1
-- name: newrelic
-  sha1: 98b96dacaddf71574a57b94419cbf031bee4047e
-  url: https://github.com/cloudfoundry-community/newrelic-boshrelease/releases/download/v14.2.1/newrelic-14.2.1.tgz
-  version: 14.2.1
-- name: newrelic-server
-  sha1: 98b96dacaddf71574a57b94419cbf031bee4047e
-  url: https://github.com/cloudfoundry-community/newrelic-boshrelease/releases/download/v14.2.1/newrelic-server-14.2.1.tgz
-  version: 14.2.1
 - name: stackdriver-tools
   sha1: 9785cd55b7b15df43ffe890ab66b398634e6e841
   url: https://github.com/cloudfoundry-community/stackdriver-tools/releases/download/v2.0.1/stackdriver-tools-2.0.1.tgz
