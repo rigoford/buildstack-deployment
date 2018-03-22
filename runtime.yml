@@ -26,7 +26,7 @@ addons:
 releases:
 - name: newrelic-infrastructure
   sha1: 8b9863ec05b665c808036de274b5de7748ca29e2
-  url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.1/newrelic-infrastructure-0.1.1.tgz
+  url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.1/newrelic-infra-bosh-0.1.1.tgz
   version: 0.1.1
 - name: newrelic
   sha1: 98b96dacaddf71574a57b94419cbf031bee4047e
