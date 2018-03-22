@@ -177,6 +177,14 @@ releases:
   sha1: e14bc9d9d7b26980534710a887d9e60c28e8ee17
   url: https://storage.googleapis.com/finkit-buildstack-releases/releases/devtools-boshrelease-0.0.14.tgz
   version: 0.0.14
+- name: newrelic-infra-bosh
+  sha1: 8b9863ec05b665c808036de274b5de7748ca29e2
+  url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.1/newrelic-infra-bosh-0.1.1.tgz
+  version: 0.1.1
+- name: stackdriver-tools
+  sha1: 9785cd55b7b15df43ffe890ab66b398634e6e841
+  url: https://github.com/cloudfoundry-community/stackdriver-tools/releases/download/v2.0.1/stackdriver-tools-2.0.1.tgz
+  version: 2.0.1
 stemcells:
 - alias: default
   os: ubuntu-trusty
