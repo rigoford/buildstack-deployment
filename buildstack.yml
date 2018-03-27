@@ -178,9 +178,9 @@ releases:
   url: https://storage.googleapis.com/finkit-buildstack-releases/releases/devtools-boshrelease-0.0.26.tgz
   version: 0.0.26
 - name: newrelic-infra-bosh
-  sha1: 8b9863ec05b665c808036de274b5de7748ca29e2
-  url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.1/newrelic-infra-bosh-0.1.1.tgz
-  version: 0.1.1
+  sha1: 5be785540118f1b3fab909ba30f64b30e48f76a5
+  url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.2/newrelic-infra-bosh-0.1.2.tgz
+  version: 0.1.2
 - name: stackdriver-tools
   sha1: 9785cd55b7b15df43ffe890ab66b398634e6e841
   url: https://github.com/cloudfoundry-community/stackdriver-tools/releases/download/v2.0.1/stackdriver-tools-2.0.1.tgz
