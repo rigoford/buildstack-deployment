@@ -138,10 +138,6 @@ instance_groups:
             - uaa.admin
             name: admin
             password: ((uaa_admin_password))
-          - groups:
-            - uaa.user
-            name: marissa
-            password: koala
         sslCertificate: ((uaa_ssl.certificate))
         sslPrivateKey: ((uaa_ssl.private_key))
         url: https://uaa.((system_domain))
