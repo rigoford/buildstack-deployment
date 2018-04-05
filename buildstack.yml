@@ -89,9 +89,12 @@ instance_groups:
   - name: gerrit
     properties:
       gerrit:
-        mysql:
+        database:
+          type: mysql
           host: ((buildstack_db_instance_ip))
           password: ((gerrit_mysql_password))
+          name: reviewdb
+          username: gerrit
     release: devtools
   name: gerrit
   networks:
