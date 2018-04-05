@@ -184,10 +184,6 @@ releases:
   sha1: 9785cd55b7b15df43ffe890ab66b398634e6e841
   url: https://github.com/cloudfoundry-community/stackdriver-tools/releases/download/v2.0.1/stackdriver-tools-2.0.1.tgz
   version: 2.0.1
-- name: devtools-boshrelease
-  sha1: 7a1effff18a83adb7c9ee504d41a5559a90c25c7
-  url: https://github.com/finkit/devtools-boshrelease/releases/download/2.0.0/devtools-boshrelease-2.0.0.tgz
-  version: 2.0.0
 stemcells:
 - alias: default
   os: ubuntu-trusty
