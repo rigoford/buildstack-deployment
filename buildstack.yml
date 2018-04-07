@@ -141,10 +141,10 @@ instance_groups:
             - uaa.admin
             name: admin
             password: ((uaa_admin_password))
-          - groups:	
-            - uaa.user	
-            name: marissa	
-            password: koala  
+          - groups:
+            - uaa.user
+            name: marissa
+            password: koala
         sslCertificate: ((uaa_ssl.certificate))
         sslPrivateKey: ((uaa_ssl.private_key))
         url: https://uaa.((system_domain))
@@ -191,7 +191,7 @@ releases:
 stemcells:
 - alias: default
   os: ubuntu-trusty
-  version: "3541.10"
+  version: "3541.12"
 update:
   canaries: 1
   canary_watch_time: 15000-300000
