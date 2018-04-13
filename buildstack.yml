@@ -177,7 +177,7 @@ releases:
   url: https://bosh.io/d/github.com/cloudfoundry/uaa-release?v=56
   version: 56
 - name: devtools
-  sha1: 406289fc6235258baa0fb8fcddade5a7e78bbc35
+  sha1: 4720dbcd1c08bd076dc3a255c7c7c646c6840528
   url: https://github.com/finkit/devtools-boshrelease/releases/download/v2.0.21/devtools-boshrelease-v2.0.21.tgz
   version: 2.0.21
 - name: newrelic-infra-bosh
