@@ -7,12 +7,12 @@ instance_groups:
     properties:
       jenkins:
         admin:
-          email: admin@localhost
+          email: buildtools@finkit.com
           password: ((jenkins_admin_password))
         agent:
           password: ((jenkins_agent_password))
         server:
-          address: http://localhost:8080/
+          address: ((jenkins_server_url))
     release: devtools
   name: jenkins-master
   networks:
