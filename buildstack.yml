@@ -173,9 +173,9 @@ name: buildstack
 os: ubuntu-trusty
 releases:
 - name: uaa
-  sha1: e5dd646db603dbde5568ae25ccd0ec28d2853dc4
-  url: https://bosh.io/d/github.com/cloudfoundry/uaa-release?v=57
-  version: 57
+  sha1: b96e5965e890d9cdd6ad96890cdaad719c368c31
+  url: https://bosh.io/d/github.com/cloudfoundry/uaa-release?v=57.1
+  version: 57.1
 - name: devtools
   sha1: 8d1cf1ce9b986bb8b1ef56fd7953864217d3a45f
   url: https://github.com/finkit/devtools-boshrelease/releases/download/v2.0.22/devtools-boshrelease-v2.0.22.tgz
