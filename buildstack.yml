@@ -6,6 +6,7 @@ instance_groups:
   - name: jenkins-master
     properties:
       jenkins:
+        config: config.xml
         github:
           oauth:
             org_name: ((github_oauth_org_name))
