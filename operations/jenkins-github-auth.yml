@@ -1,0 +1,4 @@
+---
+- type: replace
+  path: /instance_groups/name=jenkins-master/properties/jenkins/config
+  value: config-oauth.xml
