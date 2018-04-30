@@ -123,9 +123,9 @@ name: buildstack
 os: ubuntu-trusty
 releases:
 - name: devtools
-  sha1: ef7d22705d60670ef896fbbd6c6891a2b1c25b35
-  url: https://github.com/finkit/devtools-boshrelease/releases/download/v2.0.28/devtools-boshrelease-v2.0.28.tgz
-  version: 2.0.28
+  sha1: aeb3426245658a1c05923589d7bb4670e503a27f
+  url: https://github.com/finkit/devtools-boshrelease/releases/download/v2.0.32/devtools-boshrelease-v2.0.32.tgz
+  version: 2.0.32
 - name: newrelic-infra-bosh
   sha1: 5be785540118f1b3fab909ba30f64b30e48f76a5
   url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.2/newrelic-infra-bosh-0.1.2.tgz
