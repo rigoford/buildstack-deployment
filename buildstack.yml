@@ -6,25 +6,25 @@ instance_groups:
   - name: jenkins-master
     properties:
       jenkins:
-        config: config.xml
-        github:
-          oauth:
-            org_name: ((github_oauth_org_name))
-            admins:
-            user1: ((jenkins_oauth_admin_user_1))
-            admin2: ((jenkins_oauth_admin_user_2))
-            admin3: ((jenkins_oauth_admin_user_3))
-            url:
-              web: ((jenkins_oauth_github_web_ui))
-              api: ((jenkins_oauth_github_api_ui))
-            client:
-              id: ((jenkins_oauth_clientID))
-              secret: ((jenkins_oauth_clientSecret))
         admin:
           email: buildtools@finkit.com
           password: ((jenkins_admin_password))
         agent:
           password: ((jenkins_agent_password))
+        config: config.xml
+        github:
+          oauth:
+            admin2: ((jenkins_oauth_admin_user_2))
+            admin3: ((jenkins_oauth_admin_user_3))
+            admins: null
+            client:
+              id: ((jenkins_oauth_clientID))
+              secret: ((jenkins_oauth_clientSecret))
+            org_name: ((github_oauth_org_name))
+            url:
+              api: ((jenkins_oauth_github_api_ui))
+              web: ((jenkins_oauth_github_web_ui))
+            user1: ((jenkins_oauth_admin_user_1))
         server:
           address: ((jenkins_server_url))
     release: devtools
@@ -156,3 +156,4 @@ variables:
   type: password
 - name: gerrit_mysql_password
   type: password
+
