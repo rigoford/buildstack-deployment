@@ -1,8 +1,5 @@
 ---
 - type: remove
-  path: /instance_groups/name=gerrit
-
-- type: remove
   path: /instance_groups/name=nexus
 
 - type: remove

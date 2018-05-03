@@ -96,29 +96,6 @@ instance_groups:
   - internet-required
   - sonar-pool
   vm_type: default
-- azs:
-  - z1
-  instances: 1
-  jobs:
-  - name: gerrit
-    properties:
-      gerrit:
-        database:
-          host: ((buildstack_db_instance_ip))
-          name: reviewdb
-          password: ((gerrit_mysql_password))
-          type: mysql
-          username: gerrit
-    release: devtools
-  name: gerrit
-  networks:
-  - name: default
-  persistent_disk_pool: 100GB
-  stemcell: default
-  vm_extensions:
-  - internet-required
-  - gerrit-pool
-  vm_type: default
 name: buildstack
 os: ubuntu-trusty
 releases:
@@ -154,6 +131,3 @@ variables:
   type: password
 - name: sonar_mysql_password
   type: password
-- name: gerrit_mysql_password
-  type: password
-
