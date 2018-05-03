@@ -6,7 +6,4 @@
   path: /instance_groups/name=jenkins-slave
 
 - type: remove
-  path: /instance_groups/name=gerrit
-
-- type: remove
   path: /instance_groups/name=sonarqube
