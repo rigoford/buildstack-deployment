@@ -1,0 +1,8 @@
+---
+- type: replace
+  path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/sonar/database/type
+  value: MYSQL
+
+- type: replace
+  path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/sonar/database/password
+  value: ((sonar_mysql_password))

@@ -1,0 +1,12 @@
+---
+- type: replace
+  path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/github/server/url
+  value: ((github_server_url))
+
+- type: replace
+  path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/sonar/client/id
+  value: ((sonar_client_id))
+
+- type: replace
+  path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/sonar/client/secret
+  value: ((sonar_client_secret))
