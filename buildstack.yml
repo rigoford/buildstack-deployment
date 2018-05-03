@@ -82,11 +82,6 @@ instance_groups:
   instances: 1
   jobs:
   - name: sonarqube
-    properties:
-      sonar:
-        mysql:
-          host: ((buildstack_db_instance_ip))
-          password: ((sonar_mysql_password))
     release: devtools
   name: sonarqube
   networks:
