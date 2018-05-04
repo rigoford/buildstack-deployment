@@ -1,0 +1,43 @@
+azs:
+- name: z1
+- name: z2
+- name: z3
+
+vm_types:
+- name: default
+
+disk_types:
+- name: default
+  disk_size: 1024
+- name: 100GB
+  disk_size: 10024
+
+compilation:
+  workers: 5
+  az: z1
+  reuse_compilation_vms: true
+  vm_type: default
+  network: default
+
+vm_types:
+- name: default
+
+vm_extensions:
+- name: internet-required
+  cloud_properties:
+    ephemeral_external_ip: true
+- name: internet-not-required
+  cloud_properties:
+    ephemeral_external_ip: false
+- name: jenkins-pool
+  cloud_properties:
+    ephemeral_external_ip: true
+    backend_service: buildtools-backend-service
+- name: nexus-pool
+  cloud_properties:
+    ephemeral_external_ip: true
+    backend_service: buildtools-backend-service
+- name: sonar-pool
+  cloud_properties:
+    ephemeral_external_ip: true
+    backend_service: buildtools-backend-service
