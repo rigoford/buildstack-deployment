@@ -11,7 +11,6 @@ bosh delete-env \
   -o  ${BBL_STATE_DIR}/bosh-deployment/bosh-lite.yml \
   -o  ${BBL_STATE_DIR}/bosh-deployment/bosh-lite-runc.yml \
   -o  ${BBL_STATE_DIR}/bosh-deployment/gcp/bosh-lite-vm-type.yml \
-  -o  ${BBL_STATE_DIR}/bbl-ops-files/gcp/bosh-director-ephemeral-ip-ops.yml \
   --var-file  gcp_credentials_json="${BBL_GCP_SERVICE_ACCOUNT_KEY_PATH}" \
   -v  project_id="${BBL_GCP_PROJECT_ID}" \
   -v  zone="${BBL_GCP_ZONE}" 
