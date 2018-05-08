@@ -17,6 +17,16 @@ disk_types:
   name: 10GB
 - disk_size: 100240
   name: 100GB
+- name: default
+  cloud_properties:
+    machine_type: n1-standard-2
+    root_disk_size_gb: 20
+    root_disk_type: pd-ssd
+- name: large
+  cloud_properties:
+    machine_type: n1-standard-2
+    root_disk_size_gb: 50
+    root_disk_type: pd-ssd
 networks:
 - name: default
   subnets:
@@ -53,6 +63,24 @@ vm_extensions:
   cloud_properties:
     ports:
     - host: 8845
+- name: internet-required
+  cloud_properties:
+    ephemeral_external_ip: true
+- name: internet-not-required
+  cloud_properties:
+    ephemeral_external_ip: false
+- name: jenkins-pool
+  cloud_properties:
+    ephemeral_external_ip: true
+    backend_service: buildtools-backend-service
+- name: nexus-pool
+  cloud_properties:
+    ephemeral_external_ip: true
+    backend_service: buildtools-backend-service
+- name: sonar-pool
+  cloud_properties:
+    ephemeral_external_ip: true
+    backend_service: buildtools-backend-service
 vm_types:
 - name: minimal
 - name: small
