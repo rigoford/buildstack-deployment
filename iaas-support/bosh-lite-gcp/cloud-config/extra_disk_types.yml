@@ -1,5 +1,5 @@
 - type: replace
-  path: /vm_types?/-
+  path: /disk_types?/-
   value:
     name: default
     cloud_properties:
@@ -8,7 +8,7 @@
       root_disk_type: pd-ssd
 
 - type: replace
-  path: /vm_types?/-
+  path: /disk_types?/-
   value:
     name: large
     cloud_properties:
