@@ -1,19 +1,21 @@
-vm_extensions:
-- name: internet-required
-  cloud_properties:
-    ephemeral_external_ip: true
-- name: internet-not-required
-  cloud_properties:
-    ephemeral_external_ip: false
-- name: jenkins-pool
-  cloud_properties:
-    ephemeral_external_ip: true
-    backend_service: buildtools-backend-service
-- name: nexus-pool
-  cloud_properties:
-    ephemeral_external_ip: true
-    backend_service: buildtools-backend-service
-- name: sonar-pool
-  cloud_properties:
-    ephemeral_external_ip: true
-    backend_service: buildtools-backend-service
+- type: replace
+  path: /vm_extensions?
+  value:
+    - name: internet-required
+      cloud_properties:
+        ephemeral_external_ip: true
+    - name: internet-not-required
+      cloud_properties:
+        ephemeral_external_ip: false
+    - name: jenkins-pool
+      cloud_properties:
+        ephemeral_external_ip: true
+        backend_service: buildtools-backend-service
+   - name: nexus-pool
+     cloud_properties:
+       ephemeral_external_ip: true
+       backend_service: buildtools-backend-service
+   - name: sonar-pool
+     cloud_properties:
+       ephemeral_external_ip: true
+       backend_service: buildtools-backend-service
