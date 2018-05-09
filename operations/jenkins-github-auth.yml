@@ -1,4 +1,32 @@
 ---
 - type: replace
-  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties/jenkins/config
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/config
   value: config-oauth.xml
+
+- type: replace
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/admins
+  value: ((jenkins_oauth_admin_users))
+
+- type: replace
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/client/id
+  value: ((jenkins_oauth_client_id))
+
+- type: replace
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/client/id
+  value: ((jenkins_oauth_client_id))
+
+- type: replace
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/client/secret
+  value: ((jenkins_oauth_client_secret))
+
+- type: replace
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/org_name
+  value: ((jenkins_oauth_org_name))
+
+- type: replace
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/url/api
+  value: ((jenkins_oauth_github_api_url))
+
+- type: replace
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/url/web
+  value: ((jenkins_oauth_github_web_url))
