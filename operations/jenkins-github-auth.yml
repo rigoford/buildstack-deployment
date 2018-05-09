@@ -1,7 +1,7 @@
 ---
 - type: replace
-  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/config
-  value: config-oauth.xml
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/use_github_auth
+  value: true
 
 - type: replace
   path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/admins
