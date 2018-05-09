@@ -93,7 +93,7 @@ releases:
 stemcells:
 - alias: default
   os: ubuntu-trusty
-  version: "3586.5"
+  version: "3586.7"
 update:
   canaries: 1
   canary_watch_time: 15000-300000
