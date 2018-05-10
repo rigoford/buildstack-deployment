@@ -6,3 +6,7 @@
 - type: replace
   path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/sonar/database/password
   value: ((sonar_mysql_password))
+
+- type: replace
+  path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/sonar/database/host
+  value: ((buildstack_db_instance_ip))
