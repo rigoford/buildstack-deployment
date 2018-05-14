@@ -81,7 +81,7 @@ releases:
 - name: devtools
   sha1: 4e827044969250ccdcf7199d07dd406ec1fcf8da
   url: https://storage.googleapis.com/dev-build-automate-release-tarballs/devtools-boshrelease/devtools-boshrelease-v2.0.44.tgz
-  version: gcs-bucket/devtools-boshrelease-v2.0.44.tgz
+  version: 2.0.44
 - name: newrelic-infra-bosh
   sha1: 5be785540118f1b3fab909ba30f64b30e48f76a5
   url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.2/newrelic-infra-bosh-0.1.2.tgz
