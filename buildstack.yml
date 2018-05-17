@@ -11,7 +11,7 @@ instance_groups:
           password: ((jenkins_admin_password))
         agent:
           password: ((jenkins_agent_password))
-    release: devtools
+    release: jenkins
   name: jenkins-master
   networks:
   - name: default
@@ -35,7 +35,7 @@ instance_groups:
           master_password: ((jenkins_agent_password))
           master_username: agent
           mode: exclusive
-    release: devtools
+    release: jenkins
   name: jenkins-slave
   networks:
   - name: default
@@ -52,7 +52,7 @@ instance_groups:
           password: ((nexus_admin_password))
         deployer:
           password: ((nexus_deployer_password))
-    release: devtools
+    release: nexus
   name: nexus
   networks:
   - name: default
@@ -66,7 +66,7 @@ instance_groups:
   instances: 1
   jobs:
   - name: sonarqube
-    release: devtools
+    release: sonarqube
   name: sonarqube
   networks:
   - name: default
@@ -78,10 +78,6 @@ instance_groups:
 name: buildstack
 os: ubuntu-trusty
 releases:
-- name: devtools
-  sha1: 22d9ab91775f3473d0a1ff87965d6a484961da87
-  url: https://storage.googleapis.com/dev-build-automate-release-tarballs/devtools-boshrelease/devtools-boshrelease-v2.0.46.tgz
-  version: 2.0.46
 - name: newrelic-infra-bosh
   sha1: 5be785540118f1b3fab909ba30f64b30e48f76a5
   url: https://github.com/dazjones/newrelic-infra-bosh/releases/download/v0.1.2/newrelic-infra-bosh-0.1.2.tgz
