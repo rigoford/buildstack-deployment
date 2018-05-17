@@ -90,6 +90,10 @@ releases:
   sha1: 9785cd55b7b15df43ffe890ab66b398634e6e841
   url: https://github.com/cloudfoundry-community/stackdriver-tools/releases/download/v2.0.1/stackdriver-tools-2.0.1.tgz
   version: 2.0.1
+- name: jenkins
+  sha1: a12ad8d78246d4da7740dd965cdfea0f91f3d2c4
+  url: https://storage.googleapis.com/dev-build-automate-release-tarballs/jenkins-boshrelease/jenkins-boshrelease-v2.0.50.tgz
+  version: 2.0.50
 stemcells:
 - alias: default
   os: ubuntu-trusty
