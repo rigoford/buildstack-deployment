@@ -1,5 +1,9 @@
 ---
 - type: replace
+  path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/sonar/use_github_auth
+  value: true
+
+- type: replace
   path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/github/server/url
   value: ((github_server_url))
 
