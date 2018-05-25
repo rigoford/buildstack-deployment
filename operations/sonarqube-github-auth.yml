@@ -4,6 +4,10 @@
   value: true
 
 - type: replace
+  path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/sonar/server/url
+  value: ((sonar_server_url))
+
+- type: replace
   path: /instance_groups/name=sonarqube/jobs/name=sonarqube/properties?/github/server/url
   value: ((github_server_url))
 
