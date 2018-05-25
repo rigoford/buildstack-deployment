@@ -95,9 +95,9 @@ releases:
   url: https://storage.googleapis.com/dev-build-automate-release-tarballs/nexus-boshrelease/nexus-boshrelease-v1.0.5.tgz
   version: 1.0.5
 - name: sonarqube
-  sha1: 3680b5241bec69291e9207cc060a9924c321c548
-  url: https://storage.googleapis.com/dev-build-automate-release-tarballs/sonarqube-boshrelease/sonarqube-boshrelease-v0.0.16.tgz
-  version: 0.0.16
+  sha1: 7afa57adbe28149f2587bc3b3bc777ae5198cade
+  url: https://storage.googleapis.com/dev-build-automate-release-tarballs/sonarqube-boshrelease/sonarqube-boshrelease-v0.0.17.tgz
+  version: 0.0.17
 stemcells:
 - alias: default
   os: ubuntu-trusty
