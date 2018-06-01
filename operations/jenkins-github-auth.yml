@@ -30,3 +30,11 @@
 - type: replace
   path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/oauth/url/web
   value: ((jenkins_oauth_github_web_url))
+
+- type: replace
+  path: /instance_groups/name=jenkins-slave/jobs/name=jenkins-slave/properties?/jenkins/slave/master_password
+  value: ((jenkins_github_slave.token))
+
+- type: replace
+  path: /instance_groups/name=jenkins-slave/jobs/name=jenkins-slave/properties?/jenkins/slave/master_username
+  value: ((jenkins_github_slave.user))
