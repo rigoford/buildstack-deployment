@@ -33,8 +33,8 @@
 
 - type: replace
   path: /instance_groups/name=jenkins-slave/jobs/name=jenkins-slave/properties?/jenkins/slave/master_password
-  value: ((jenkins_github_slave.token))
+  value: ((jenkins_github_slave_token))
 
 - type: replace
   path: /instance_groups/name=jenkins-slave/jobs/name=jenkins-slave/properties?/jenkins/slave/master_username
-  value: ((jenkins_github_slave.user))
+  value: ((jenkins_github_slave_user))
