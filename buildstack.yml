@@ -68,11 +68,11 @@ instance_groups:
   instances: 1
   jobs:
   - name: sonarqube
-    release: sonarqube
     properties:
       sonar:
         admin:
           password: ((sonar_admin_password))
+    release: sonarqube
   name: sonarqube
   networks:
   - name: default
@@ -97,9 +97,9 @@ releases:
   url: https://storage.googleapis.com/dev-build-automate-release-tarballs/jenkins-boshrelease/jenkins-boshrelease-v0.0.11.tgz
   version: 0.0.11
 - name: nexus
-  sha1: 121aa73259e4d23c2b7e5609abfe112fde97f93a
-  url: https://storage.googleapis.com/dev-build-automate-release-tarballs/nexus-boshrelease/nexus-boshrelease-v1.0.6.tgz
-  version: 1.0.6
+  sha1: 8e72cc456debf4e233cd2443f1dc21a2e47b8ddb
+  url: https://storage.googleapis.com/dev-build-automate-release-tarballs/nexus-boshrelease/nexus-boshrelease-v1.0.9.tgz
+  version: 1.0.9
 - name: sonarqube
   sha1: 64deb341f5d8b3e219d3dc2ef3eba3db2a010833
   url: https://storage.googleapis.com/dev-build-automate-release-tarballs/sonarqube-boshrelease/sonarqube-boshrelease-v0.0.20.tgz
@@ -126,3 +126,4 @@ variables:
   type: password
 - name: sonar_mysql_password
   type: password
+
