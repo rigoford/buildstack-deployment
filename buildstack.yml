@@ -54,6 +54,8 @@ instance_groups:
           password: ((nexus_admin_password))
         deployer:
           password: ((nexus_deployer_password))
+        developer:
+          password: ((nexus_developer_password))
     release: nexus
   name: nexus
   networks:
@@ -121,6 +123,8 @@ variables:
 - name: nexus_admin_password
   type: password
 - name: nexus_deployer_password
+  type: password
+- name: nexus_developer_password
   type: password
 - name: sonar_admin_password
   type: password
