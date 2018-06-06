@@ -32,6 +32,10 @@
   value: ((jenkins_oauth_github_web_url))
 
 - type: replace
+  path: /instance_groups/name=jenkins-master/jobs/name=jenkins-master/properties?/jenkins/github/devsystems/access_token
+  value: ((ghe_devsystems_access_token))
+
+- type: replace
   path: /instance_groups/name=jenkins-slave/jobs/name=jenkins-slave/properties?/jenkins/slave/master_password
   value: ((jenkins_github_slave_token))
 
