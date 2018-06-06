@@ -97,9 +97,9 @@ releases:
   url: https://storage.googleapis.com/dev-build-automate-release-tarballs/jenkins-boshrelease/jenkins-boshrelease-v0.0.20.tgz
   version: 0.0.20
 - name: nexus
-  sha1: 8e72cc456debf4e233cd2443f1dc21a2e47b8ddb
-  url: https://storage.googleapis.com/dev-build-automate-release-tarballs/nexus-boshrelease/nexus-boshrelease-v1.0.9.tgz
-  version: 1.0.9
+  sha1: 1658e6f386ad8543c6440aa3b99afff7de47908e
+  url: https://storage.googleapis.com/dev-build-automate-release-tarballs/nexus-boshrelease/nexus-boshrelease-v1.0.10.tgz
+  version: 1.0.10
 - name: sonarqube
   sha1: ed172010738d54459351156f5617f3a393bd56e3
   url: https://storage.googleapis.com/dev-build-automate-release-tarballs/sonarqube-boshrelease/sonarqube-boshrelease-v0.0.22.tgz
