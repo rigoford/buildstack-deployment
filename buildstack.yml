@@ -79,6 +79,7 @@ instance_groups:
   name: sonarqube
   networks:
   - name: default
+  persistent_disk_pool: 100GB
   stemcell: default
   vm_extensions:
   - internet-required
