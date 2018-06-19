@@ -60,6 +60,7 @@ instance_groups:
   name: nexus
   networks:
   - name: default
+  persistent_disk_pool: 500GB
   stemcell: default
   vm_extensions:
   - internet-required
